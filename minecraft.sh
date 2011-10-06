@@ -11,9 +11,9 @@ mkdir worldstorage
 wget http://ci.bukkit.org/job/dev-CraftBukkit/promotion/latest/Recommended/artifact/target/craftbukkit-0.0.1-SNAPSHOT.jar
 BINDIR="$(dirname "$(readlink -fn "$0")")"
 cd "$BINDIR"
-java -Xincgc -Xmx1G -jar craftbukkit-0.0.1-SNAPSHOT.jar
+java -Xincgc -Xmx1G -jar ~/minecraft/craftbukkit-0.0.1-SNAPSHOT.jar
 mv /home/$me/minecraft/world /home/$me/minecraft/worldstorage
 mv /home/$me/minecraft/world_nether /home/$me/minecraft/worldstorage
 rm /home/$me/minecraft/server.log
-#rm /home/$me/minecraft/minecraft.sh
+rm /home/$me/minecraft.sh
 
