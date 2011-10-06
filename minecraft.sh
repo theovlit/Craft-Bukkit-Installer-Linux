@@ -1,7 +1,5 @@
 #!/bin/sh
 me=`whoami`
-mkdir /home/$me/minecraft
-cd /home/$me/minecraft
 wget https://raw.github.com/theovlit/Craft-Bukkit-Installer-Linux/master/minecraft
 sudo mv minecraft /etc/init.d/minecraft
 chmod 755 /etc/init.d/minecraft
@@ -15,5 +13,5 @@ java -Xincgc -Xmx1G -jar ~/minecraft/craftbukkit-0.0.1-SNAPSHOT.jar
 mv /home/$me/minecraft/world /home/$me/minecraft/worldstorage
 mv /home/$me/minecraft/world_nether /home/$me/minecraft/worldstorage
 rm /home/$me/minecraft/server.log
-rm /home/$me/minecraft.sh
+rm /home/$me/minecraft/minecraft.sh
 
