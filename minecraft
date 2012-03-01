@@ -23,7 +23,7 @@
 ######### SETTINGS ##########
 #############################
 # Name of server.jar file
-SERVICE="craftbukkit-0.0.1-SNAPSHOT.jar"
+SERVICE="craftbukkit.jar"
 # Name to use for the screen instance
 SCREEN="minecraft"
 # User that should run the server
@@ -255,15 +255,15 @@ mc_update() {
 		### update craftbukkit
 
 		echo "Updating craftbukkit...."
-		as_user "cd $MCPATH && wget -q -O $MCPATH/craftbukkit.jar.update http://ci.bukkit.org/job/dev-CraftBukkit/promotion/latest/Recommended/artifact/target/craftbukkit-0.0.1-SNAPSHOT.jar"
+		as_user "cd $MCPATH && wget -q -O $MCPATH/craftbukkit.jar.update http://ci.bukkit.org/job/dev-CraftBukkit/promotion/latest/Recommended/artifact/target/craftbukkit.jar"
 		if [ -f $MCPATH/craftbukkit.jar.update ]
 		then
-			if `diff $MCPATH/craftbukkit-0.0.1-SNAPSHOT.jar $MCPATH/craftbukkit.jar.update > /dev/null`
+			if `diff $MCPATH/craftbukkit.jar $MCPATH/craftbukkit.jar.update > /dev/null`
 			then
 				echo "You are already running the latest version of CraftBukkit."
 				as_user "rm $MCPATH/craftbukkit.jar.update"
 			else
-				as_user "mv $MCPATH/craftbukkit.jar.update $MCPATH/craftbukkit-0.0.1-SNAPSHOT.jar"
+				as_user "mv $MCPATH/craftbukkit.jar.update $MCPATH/craftbukkit.jar"
 				echo "CraftBukkit successfully updated."
 			fi
 		else
